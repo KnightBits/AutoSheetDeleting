@@ -42,14 +42,14 @@
    }
 
    function createWeeklyTrigger() {
-  ScriptApp.newTrigger('deleteColumnsCEtoCI') // Название функции, которая будет выполняться
-    .timeBased() // Устанавливаем, что это временной триггер
-    .onWeekDay(ScriptApp.WeekDay.SATURDAY) // Указываем день недели - суббота
-    .atHour(19) // Указываем час - 19:00
-    .everyWeeks(1) // Устанавливаем повторение каждую неделю
-    .create(); // Создаем триггер
-}
-```
+     ScriptApp.newTrigger('deleteColumnsCEtoCI') // Название функции, которая будет выполняться
+       .timeBased() // Устанавливаем, что это временной триггер
+       .onWeekDay(ScriptApp.WeekDay.SATURDAY) // Указываем день недели - суббота
+       .atHour(19) // Указываем час - 19:00
+       .everyWeeks(1) // Устанавливаем повторение каждую неделю
+       .create(); // Создаем триггер
+   }
+   ```
 
 4. Сохраните проект, например, под именем "AutoDeleteColumns".
 5. В меню **Триггеры** (Triggers) создайте новый триггер, используя функцию `createTrigger`, чтобы она запускалась каждый промежуток времени.
