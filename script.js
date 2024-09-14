@@ -23,10 +23,11 @@ function getNextMonday() {
   return Utilities.formatDate(nextMonday, Session.getScriptTimeZone(), "dd.MM.yyyy");
 }
 
-function createTrigger() {
-  // Создаем триггер, который будет вызывать функцию через каждые 60 секунд (каждую минуту)
-  ScriptApp.newTrigger('deleteColumnsCEtoCI')
-  .timeBased()
-  .everyMinutes(1) // Запуск каждую минуту
-  .create();
+function createWeeklyTrigger() {
+  ScriptApp.newTrigger('deleteColumnsCEtoCI') // Название функции, которая будет выполняться
+    .timeBased() // Устанавливаем, что это временной триггер
+    .onWeekDay(ScriptApp.WeekDay.SATURDAY) // Указываем день недели - суббота
+    .atHour(19) // Указываем час - 19:00
+    .everyWeeks(1) // Устанавливаем повторение каждую неделю
+    .create(); // Создаем триггер
 }
